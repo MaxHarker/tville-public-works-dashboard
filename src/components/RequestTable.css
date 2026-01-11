@@ -1,0 +1,29 @@
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.request-table th,
+.request-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.request-table thead {
+  background-color: #003366;
+  color: white;
+}
+
+.request-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.request-table tbody tr:hover {
+  background-color: #f1f8ff;
+}
+
+.request-table td {
+  vertical-align: top;
+}
