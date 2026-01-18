@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import RequestTable from "./components/RequestTable";
 import DashboardCard from "./components/DashboardCard";
+import "./App.css";
 
 function App() {
+  const [filterStatus, setFilterStatus] = useState("All");
+
   const requests = [
     {
       id: 101,
@@ -27,22 +30,35 @@ function App() {
     },
   ];
 
+  // Filter requests based on selected status
+  const filteredRequests = requests.filter((req) =>
+    filterStatus === "All" ? true : req.status === filterStatus
+  );
+
   return (
-    <div
-      style={{
-        padding: "2rem",
-        fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f5f5f5",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="App" style={{ padding: "2rem", fontFamily: "Arial, sans-serif", backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
       <h1 style={{ textAlign: "center", color: "#003366" }}>
         Taylorsville Public Works Dashboard
       </h1>
 
-      {/* Use the new DashboardCard component */}
       <DashboardCard>
-        <RequestTable requests={requests} />
+        <div style={{ marginBottom: "1rem" }}>
+          <label htmlFor="statusFilter" style={{ marginRight: "0.5rem", fontWeight: "bold" }}>
+            Filter by Status:
+          </label>
+          <select
+            id="statusFilter"
+            value={filterStatus}
+            onChange={(e) => setFilterStatus(e.target.value)}
+          >
+            <option value="All">All</option>
+            <option value="Submitted">Submitted</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+
+        <RequestTable requests={filteredRequests} />
       </DashboardCard>
     </div>
   );
