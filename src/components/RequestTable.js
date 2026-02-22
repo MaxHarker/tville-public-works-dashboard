@@ -2,7 +2,7 @@ import React from "react";
 import StatusBadge from "./StatusBadge";
 import "./RequestTable.css";
 
-const RequestTable = ({ requests }) => {
+const RequestTable = ({ requests, onRowClick }) => {
   return (
     <div className="request-table-container">
       <table className="request-table">
@@ -17,13 +17,11 @@ const RequestTable = ({ requests }) => {
         </thead>
         <tbody>
           {requests.map((request) => (
-            <tr key={request.id}>
+            <tr key={request.id} onClick={() => onRowClick(request)} style={{ cursor: "pointer" }}>
               <td>{request.id}</td>
               <td>{request.location}</td>
               <td>{request.description}</td>
-              <td>
-                <StatusBadge status={request.status} />
-              </td>
+              <td><StatusBadge status={request.status} /></td>
               <td>{new Date(request.createdAt).toLocaleDateString()}</td>
             </tr>
           ))}
