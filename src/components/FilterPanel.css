@@ -1,0 +1,60 @@
+/* Filter Panel Styling */
+.filter-panel {
+  background-color: #fefefe;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  flex-direction: column; /* stack vertically for centered layout */
+  align-items: flex-start; /* left align items under title */
+  gap: 1rem;
+}
+
+.filter-panel h2 {
+  color: #003366;
+  margin-bottom: 0.5rem;
+  align-self: center; /* center title in panel */
+}
+
+.status-checkboxes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center; /* center checkboxes under title */
+  width: 100%;
+}
+
+.filter-panel label {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filter-panel input[type="text"],
+.filter-panel input[type="date"] {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem; /* slightly bigger text */
+  width: 220px; /* make search box wider */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-panel input[type="text"]:focus,
+.filter-panel input[type="date"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
+}
+
+/* Wrap inputs nicely for responsiveness */
+.filter-inputs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center; /* center inputs under title */
+  width: 100%;
+}
