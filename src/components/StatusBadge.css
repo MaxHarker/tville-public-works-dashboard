@@ -10,13 +10,14 @@
 }
 
 .status-badge.submitted {
-  background-color: #6c757d;
+  background-color: #f1c40f; /* yellow */
+  color: black; /* optional: better contrast on yellow */
 }
 
 .status-badge.in-progress {
-  background-color: #f0ad4e;
+  background-color: #3498db; /* blue */
 }
 
 .status-badge.completed {
-  background-color: #28a745;
+  background-color: #2ecc71; /* green */
 }
