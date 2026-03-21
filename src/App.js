@@ -44,7 +44,7 @@ function App() {
         minHeight: "100vh"
       }}
     >
-      <h1 style={{ textAlign: "center", color: "#003366" }}>
+      <h1 className="dashboard-title">
         Taylorsville Public Works Dashboard
       </h1>
 
