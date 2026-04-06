@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
   background: linear-gradient(180deg, #f0f6ff 0%, #dbeafe 100%);
+  font-size: 1.2em;
 }
 
 .App-logo {
